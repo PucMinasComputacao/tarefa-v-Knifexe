@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=" L/maxcdn.bootstrapcdn.com/font-awesome/4.3.0/ css/font-awesome.min.css">
+    <title>Puc Localiza</title>
+</head>
+
+<body>
+    <header>
+        <div class="cabecalho">
+            <h2>PUC Localiza</h2>
+            <input type="text" id="busca" placeholder="Buscar Carros...">
+        </div>
+    </header>
+    <div class="layout">
+        <aside>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="alugar.html">Alugar</a></li>
+                    <li><a href="comprar.html">Comprar</a></li>
+                    <li><a href="novos.html">Novos</a></li>
+                    <li><a href="contato.html">Contatos</a></li>
+                </ul>
+            </div>
+        </aside>
+        <div class="conteudo">
+
+            <!-- SLIDER CARROSSEL -->
+            <div class="slider">
+                <div class="slides">
+                    <div class="slide"><img src="images/g63.jpeg">
+                    </div>
+                    <div class="slide"><img src="images/urus.jpg">
+                    </div>
+                    <div class="slide"><img src="images/x7.jpg">
+                    </div>
+                    <div class="slide"><img src="images/x6.jpg">
+                    </div>
+                    <div class="slide"><img src="images/Jetta-3.jpg">
+                    </div>
+                    <div class="slide"><img src="images/tesla.jpg">
+                    </div>
+                </div>
+            </div>
+
+            <h3>Carros Disponíveis Para Alugar</h3>
+
+            <div class="cards">
+
+                <div class="card">
+                    <img src="images/g63.jpeg">
+                    <div class="info">
+                        <p class="nome">Mercedes-AMG G63</p>
+                        <p class="preco">R$ 20.000/mês</p>
+                        <a class="botao">Alugar</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/tesla.jpg">
+                    <div class="info">
+                        <p class="nome">Tesla Cybertruck</p>
+                        <p class="preco">R$ 12.000/mês</p>
+                        <a class="botao">Alugar</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="images/urus.jpg">
+                    <div class="info">
+                        <p class="nome">Lamborghini Urus</p>
+                        <p class="preco">R$ 26.000/mês</p>
+                        <a class="botao">Alugar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <footer>
+        <div class="rodape">
+            <P>Localiza Puc, Aqui Você Localiza seu Futuro</P>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+    const busca = document.getElementById("busca");
+    const cards = document.querySelectorAll(".card");
+
+    busca.addEventListener("input", function () {
+        const valor = busca.value.toLowerCase();
+
+        cards.forEach(card => {
+            const nome = card.querySelector(".nome").textContent.toLowerCase();
+
+            if (nome.includes(valor)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+</script>
